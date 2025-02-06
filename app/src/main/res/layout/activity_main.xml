@@ -42,4 +42,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_tap" />
 
+    <ImageButton
+        android:id="@+id/btn_boost"
+        android:layout_width="95dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boost" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

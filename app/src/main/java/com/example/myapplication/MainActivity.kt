@@ -1,8 +1,10 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     public var inc: Long = 1
 
     private lateinit var btn_tap: Button
+    private lateinit var btn_boost: ImageButton
     private lateinit var text_score: TextView
     private lateinit var text_inc: TextView
 
@@ -37,10 +40,14 @@ class MainActivity : AppCompatActivity() {
         load()
 
         btn_tap = findViewById(R.id.btn_tap)
+        btn_boost = findViewById(R.id.btn_boost)
         text_score = findViewById(R.id.text_score)
         text_inc = findViewById(R.id.text_inc)
 
         btn_tap.setOnClickListener { add() }
+        btn_boost.setOnClickListener {
+            startActivity(Intent(this, BoostsActivity::class.java))
+        }
     }
 
     private fun add() {
