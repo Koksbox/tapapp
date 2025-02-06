@@ -1,4 +1,4 @@
-package com.example.myapplication.boost
+package com.example.cliker.boost
 
 abstract class AbsBoost {
     var price: Long = 0
