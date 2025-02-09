@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.clicker"
+    namespace = "com.aspirant.clicker"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.clicker"
+        applicationId = "com.aspirant.clicker"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

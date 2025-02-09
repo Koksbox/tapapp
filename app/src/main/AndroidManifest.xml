@@ -13,10 +13,10 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name="com.example.cliker.BoostsActivity"
+            android:name="com.aspirant.clicker.BoostsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.cliker.MainActivity"
+            android:name="com.aspirant.clicker.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
