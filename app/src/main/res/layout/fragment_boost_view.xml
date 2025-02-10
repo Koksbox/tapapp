@@ -1,0 +1,29 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.aspirant.clicker.boost.BoostView">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#C5C5C5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/boost_icon_size"
+        android:layout_height="@dimen/boost_icon_size"
+        android:layout_marginStart="@dimen/boost_padding"
+        android:layout_marginBottom="@dimen/boost_padding"
+        android:contentDescription="@string/boost_fragment_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
