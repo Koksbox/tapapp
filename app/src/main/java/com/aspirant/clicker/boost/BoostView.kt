@@ -1,8 +1,6 @@
 package com.aspirant.clicker.boost
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -60,7 +58,12 @@ class BoostView : Fragment() {
         view?.findViewById<TextView>(R.id.boost_reward)?.text = "+ $inc $"
         view?.findViewById<TextView>(R.id.boost_level)?.text = "lvl. $level"
         view?.findViewById<TextView>(R.id.boost_price)?.text = "$price $"
-        view?.findViewById<ImageView>(R.id.boost_img)?.setImageResource(R.drawable.boost_0)
+
+        val imageId = resources.getIdentifier("boost_$id", "drawable", activity?.packageName)
+        if (imageId != 0) {
+            view?.findViewById<ImageView>(R.id.boost_img)?.setImageResource(imageId)
+        }
+
     }
 
 }
