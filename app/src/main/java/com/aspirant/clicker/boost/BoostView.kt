@@ -63,7 +63,5 @@ class BoostView : Fragment() {
         if (imageId != 0) {
             view?.findViewById<ImageView>(R.id.boost_img)?.setImageResource(imageId)
         }
-
     }
-
 }
