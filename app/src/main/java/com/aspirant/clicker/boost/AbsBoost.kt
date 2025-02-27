@@ -7,7 +7,6 @@ abstract class AbsBoost {
     var id = 0
 
     abstract fun buy()
-    abstract fun load(id: Int)
     abstract fun save()
     abstract fun apply()
 }
