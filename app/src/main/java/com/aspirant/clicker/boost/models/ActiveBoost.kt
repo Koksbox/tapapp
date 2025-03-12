@@ -19,12 +19,12 @@ open class ActiveBoost: AbsBoost() {
         }
 
         fun load(id: Int): ActiveBoost {
-            val getted_title = shared?.getString("boost_${id}_title", null)
-            if (getted_title != null) {
+            val gettedTitle = shared?.getString("boost_${id}_title", null)
+            if (gettedTitle != null) {
                 val instance = ActiveBoost()
 
                 instance.id = id
-                instance.title = getted_title
+                instance.title = gettedTitle
                 instance.inc = shared?.getLong("boost_${id}_inc", 1)!!
                 instance.price = shared?.getLong("boost_${id}_price", 1)!!
                 instance.level = shared?.getInt("boost_${id}_level", 0)!!

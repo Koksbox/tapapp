@@ -12,13 +12,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    public var score: Long = 0
-    public var inc: Long = 1
+    var score: Long = 0
+    var inc: Long = 1
 
-    private lateinit var btn_tap: Button
-    private lateinit var btn_boost: ImageButton
-    private lateinit var text_score: TextView
-    private lateinit var text_inc: TextView
+    private lateinit var btnTap: Button
+    private lateinit var btnBoost: ImageButton
+    private lateinit var textScore: TextView
+    private lateinit var textInc: TextView
 
     private lateinit var shared: SharedPreferences
     private lateinit var sharedEditor: SharedPreferences.Editor
@@ -38,13 +38,13 @@ class MainActivity : AppCompatActivity() {
         sharedEditor = shared.edit()
         load()
 
-        btn_tap = findViewById(R.id.btn_tap)
-        btn_boost = findViewById(R.id.btn_boost)
-        text_score = findViewById(R.id.text_score)
-        text_inc = findViewById(R.id.text_inc)
+        btnTap = findViewById(R.id.btn_tap)
+        btnBoost = findViewById(R.id.btn_boost)
+        textScore = findViewById(R.id.text_score)
+        textInc = findViewById(R.id.text_inc)
 
-        btn_tap.setOnClickListener { add() }
-        btn_boost.setOnClickListener {
+        btnTap.setOnClickListener { add() }
+        btnBoost.setOnClickListener {
             startActivity(Intent(this, BoostsActivity::class.java))
         }
     }
@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        text_score.text = String.format(getString(R.string.text_score_text), score)
-        text_inc.text = String.format(getString(R.string.text_inc_text), inc)
+        textScore.text = String.format(getString(R.string.text_score_text), score)
+        textInc.text = String.format(getString(R.string.text_inc_text), inc)
     }
 
     private fun save() {

@@ -25,6 +25,7 @@ class BoostsActivity : AppCompatActivity() {
         }
 
         shared = getSharedPreferences("main", 0)
+        ActiveBoost.init(shared)
 
         findViewById<LinearLayout>(R.id.boosts_layout).removeAllViews()
         BoostView.updateCountMoney(shared.getLong("score", 0))

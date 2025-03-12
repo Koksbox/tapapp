@@ -1,5 +1,6 @@
 package com.aspirant.clicker.boost
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -47,8 +48,9 @@ class BoostView : Fragment() {
             }
     }
 
-    override fun onResume() {
-        super.onResume()
+
+    @SuppressLint("DiscouragedApi")
+    private fun updateUI() {
         view?.findViewById<TextView>(R.id.boost_name)?.text = boost?.title
         view?.findViewById<TextView>(R.id.boost_reward)?.text = "+ ${boost?.inc} $"
         view?.findViewById<TextView>(R.id.boost_level)?.text = "lvl. ${boost?.level}"
@@ -58,6 +60,16 @@ class BoostView : Fragment() {
         val imageId = resources.getIdentifier("boost_${boost?.id}", "drawable", activity?.packageName)
         if (imageId != 0) {
             view?.findViewById<ImageView>(R.id.boost_img)?.setImageResource(imageId)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateUI()
+
+        view?.setOnClickListener {
+            boost?.buy()
+            updateUI() // Обновление View после покупки
         }
     }
 }
